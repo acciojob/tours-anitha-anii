@@ -42,13 +42,15 @@ const App = () => {
     ]
 
   );
+
   const [expandedTours, setExpandedTours] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-       setTimeout(() => {
+    // Simulate loading delay
+    setTimeout(() => {
       setIsLoading(false);
-    }, 1500); 
+    }, 1500); // Adjust the delay as needed
   }, []);
 
   function toggleExpandTour(index) {
@@ -83,11 +85,11 @@ const App = () => {
             </div>
           ) : (
             tourlist.map((tour, index) => (
-              <li key={index} className="single-tour">
+              <li key={tour.id} className="single-tour">
                 <h2>{tour.name}</h2>
                 <img src={tour.image} alt="image" />
-                <p className="tour-info">
-                  {expandedTours.includes(index) ? tour.info : tour.info.substring(0, 200) + "..."}
+                <p className="tour-info" id={`tour-item-para-${tour.id}`}>
+                  {expandedTours.includes(index) ? tour.info : `${tour.info.substring(0, 200)}...`}
                   <button
                     className="show-more-btn"
                     onClick={() => toggleExpandTour(index)}
@@ -96,7 +98,7 @@ const App = () => {
                   </button>
                 </p>
                 <h4 className="tour-price">{tour.price}</h4>
-                <button className="delete-btn" onClick={() => removetour(index)}>Delete</button>
+                <button className="delete-btn" id={`delete-btn-${tour.id}`} onClick={() => removetour(index)}>Delete</button>
               </li>
             ))
           )}
