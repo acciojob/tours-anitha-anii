@@ -47,10 +47,9 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading delay
-    setTimeout(() => {
+        setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // Adjust the delay as needed
+    }, 1500); 
   }, []);
 
   function toggleExpandTour(index) {
@@ -91,7 +90,7 @@ const App = () => {
                 <p className="tour-info" id={`tour-item-para-${tour.id}`}>
                   {expandedTours.includes(index) ? tour.info : `${tour.info.substring(0, 200)}...`}
                   <button
-                    className="show-more-btn"
+                    className="show-more-btn" id={`see-more-${tour.id}`}
                     onClick={() => toggleExpandTour(index)}
                   >
                     {expandedTours.includes(index) ? "See Less" : "Show More"}
