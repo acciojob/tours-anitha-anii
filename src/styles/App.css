@@ -1,12 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 h1 {
     color: #27aedb;
     text-align: center;
     }
     
 
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+
+.all-tour{
+   display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+ul li {
+    width: 350px;
+    
+  padding: 5px;
+  margin: 10px;
+   box-shadow: 3px 3px 8px 0px grey;
+}
+li{
+    list-style: none;
+}
+h4{
+    display: inline;
+}
+.delete-btn{
+    margin-left: 80%;
+    cursor: pointer;
+    background-color: red;
+    color: beige;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
 }
