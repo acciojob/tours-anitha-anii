@@ -93,7 +93,7 @@ const App = () => {
                     className="show-more-btn" id={`see-more-${tour.id}`}
                     onClick={() => toggleExpandTour(index)}
                   >
-                    {expandedTours.includes(index) ? "See Less" : "See more"}
+                    {expandedTours.includes(index) ? "Show less" : "See more"}
                   </button>
                 </p>
                 <h4 className="tour-price">{tour.price}</h4>
